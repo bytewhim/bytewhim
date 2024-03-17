@@ -1,6 +1,6 @@
 👋 Hi, I’m @bytewhim, 
 
-Welcome to our coding channel, where we provide concise and straightforward tutorials on various programming topics.
+Place to find concise and straightforward tutorials on various programming topics.
 
 <!---
 bytewhim/bytewhim is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.

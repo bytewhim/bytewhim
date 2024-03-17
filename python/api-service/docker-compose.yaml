@@ -1,0 +1,48 @@
+version: "3.8"
+services:
+  home-api:
+    container_name: home-web
+    image: bytewhim/service-mesh:home-web-1.0
+    build:
+      context: ./home
+    ports:
+      - 8080:8080
+    network_mode: "host"
+  login-api:
+    container_name: login-api
+    image: bytewhim/service-mesh:login-api-1.0
+    build:
+      context: ./login
+    volumes:
+      - ./database/users.db:/database/users.db
+    ports:
+      - 8081:8081
+    network_mode: "host"
+  register-api:
+    container_name: register-api
+    image: bytewhim/service-mesh:register-api-1.0
+    build:
+      context: ./register
+    volumes:
+      - ./database/users.db:/database/users.db
+    ports:
+      - 8082:8082
+    network_mode: "host"
+  view-api:
+    container_name: view-api
+    image: bytewhim/service-mesh:view-api-1.0
+    build:
+      context: ./view
+    ports:
+      - 8083:8083
+    network_mode: "host"
+  add-review-api:
+    container_name: add-review-api
+    image: bytewhim/service-mesh:add-review-api-1.0
+    build:
+      context: ./add-review
+    volumes:
+      - ./database/reviews.db:/database/reviews.db
+    ports:
+      - 8084:8084
+    network_mode: "host"

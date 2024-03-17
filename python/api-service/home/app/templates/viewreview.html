@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Reviews</title>
+    <style>
+        .json-box {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            background-color: #f9f9f9;
+        }
+
+        .json-key {
+            font-weight: bold;
+        }
+        .json-value {
+            margin-left: 10px;
+        }
+        h1 {
+            margin-top: 0;
+            text-align: center;
+        }
+        .home-link {
+            margin: 100px;
+            font-size: 18px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .home-link a {
+            color: #007bff; 
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book Reviews</h1>
+    <div class="json-box">
+        {% for key, value in json_response.items() %}
+            <div class="json-item">
+                <div class="json-pair">
+                    {% for values in value %}
+                        {% for i in values %}
+                        <dl class="json-value">{{ i }}</dl>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+        
+    </div>
+    <div class="home-container">
+        <p class="home-link">
+            <a href="/">Home</a> &emsp; &emsp;
+            <a href="/addreview"> add review </a> 
+            <br> </br>
+        </p></div>
+</body>
+</html>
