@@ -33,6 +33,8 @@ services:
     image: bytewhim/service-mesh:view-api-1.0
     build:
       context: ./view
+    volumes:
+      - ./database/reviews.db:/database/reviews.db
     ports:
       - 8083:8083
     network_mode: "host"
